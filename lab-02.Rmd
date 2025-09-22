@@ -1,7 +1,7 @@
 ---
 title: "Lab 02 - Plastic waste"
-author: "Votre nom"
-date: "La date"
+author: "Léamarie Nadon"
+date: "15 septembre 2025"
 output: github_document
 ---
 
@@ -26,15 +26,19 @@ plastic_waste <- plastic_waste %>%
 ## Exercices
 
 ### Exercise 1
+L'europe est le continent qui produit le plus de déchets par habitant par jour.
 
 ```{r plastic-waste-continent}
-# insert code here
+  ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+ geom_histogram(binwidth = 0.2)+
+facet_grid(~ continent)
 ```
 
 ### Exercise 2
 
 ```{r plastic-waste-density}
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, fill = continent))+ geom_density(adjust = 0.5, alpha = 0.5)+
+labs( x = "plastic_waste_per_cap", y = "Density", title = "Amount of plastic waste per cap", fill = "continent")
 ```
 
 Réponse à la question...
